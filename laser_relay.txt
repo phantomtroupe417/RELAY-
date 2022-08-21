@@ -1,0 +1,31 @@
+int  rly =2;
+int laser=0; 
+void setup() 
+{
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(laser,INPUT);
+  pinMode(rly,OUTPUT);
+  pinMode(rly,HIGH);
+}
+
+void loop() {
+  
+  // put your main code here, to run repeatedly:
+  int val = digitalRead(laser); 
+  delay(100);
+  Serial.println("val:");
+  Serial.println(val);
+  delay(100);
+
+  if(!val)
+  {
+    digitalWrite(rly,LOW);
+    delay(2000);
+  }
+  else
+  {
+    digitalWrite(rly,HIGH);
+    delay(500);
+  }
+}
